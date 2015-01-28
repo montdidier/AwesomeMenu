@@ -43,6 +43,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     NSUInteger _flag;
     NSTimer *_timer;
     AwesomeMenuItem *_startButton;
+    UIImage *normalStateImage;
     
     id<AwesomeMenuDelegate> __weak _delegate;
     BOOL _isAnimating;
@@ -71,6 +72,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
         self.closeRotation = kAwesomeMenuDefaultCloseRotation;
         self.animationDuration = kAwesomeMenuDefaultAnimationDuration;
         self.rotateAddButton = YES;
+        self.buttonRotateAngle = -M_PI_4;
         
         self.menusArray = aMenusArray;
         
@@ -262,10 +264,19 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     if(self.delegate && [self.delegate respondsToSelector:@selector(awesomeMenuWillAnimateClose:)]){
         [self.delegate awesomeMenuWillAnimateClose:self];
     }
+    
+    if (self.selectedStateImage) {
+        if (expanding) {
+            normalStateImage = self.contentImage;
+            self.contentImage = self.selectedStateImage;
+        } else {
+            self.contentImage = normalStateImage;
+        }
+    }
 
     // rotate add button
     if (self.rotateAddButton) {
-        float angle = self.isExpanding ? -M_PI_4 : 0.0f;
+        float angle = self.isExpanding ? self.buttonRotateAngle : 0.0f;
         [UIView animateWithDuration:kAwesomeMenuStartMenuDefaultAnimationDuration animations:^{
             _startButton.transform = CGAffineTransformMakeRotation(angle);
         }];

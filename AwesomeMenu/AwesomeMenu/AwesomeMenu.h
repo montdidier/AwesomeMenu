@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIImage *highlightedImage;
 @property (nonatomic, strong) UIImage *contentImage;
 @property (nonatomic, strong) UIImage *highlightedContentImage;
+@property (nonatomic, strong) UIImage *selectedStateImage;
 
 @property (nonatomic, assign) CGFloat nearRadius;
 @property (nonatomic, assign) CGFloat endRadius;
@@ -34,6 +35,7 @@
 @property (nonatomic, assign) CGFloat closeRotation;
 @property (nonatomic, assign) CGFloat animationDuration;
 @property (nonatomic, assign) BOOL    rotateAddButton;
+@property (nonatomic, assign) float   buttonRotateAngle;
 
 - (id)initWithFrame:(CGRect)frame startItem:(AwesomeMenuItem*)startItem optionMenus:(NSArray *)aMenusArray;
 
