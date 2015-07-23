@@ -444,6 +444,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (AwesomeMenuItem *)getStartButton{
     return _startButton;
+    
 }
 
 @end
