@@ -38,6 +38,7 @@
 @property (nonatomic, assign) float   buttonRotateAngle;
 
 - (id)initWithFrame:(CGRect)frame startItem:(AwesomeMenuItem*)startItem optionMenus:(NSArray *)aMenusArray;
+- (AwesomeMenuItem *)getStartButton;
 
 @end
 
