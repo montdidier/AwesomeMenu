@@ -8,4 +8,5 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/montdidier/AwesomeMenu.git', :tag => '1.0.2' }
   spec.source_files = 'AwesomeMenu/AwesomeMenu/*'
   spec.requires_arc = true
+  spec.ios.deployment_target = '7.0'
 end
