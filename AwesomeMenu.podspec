@@ -1,20 +1,11 @@
-{
-"name": "AwesomeMenu",
-"version": "1.0.1",
-"summary": "Path 2.0 menu using CoreAnimation :).",
-"homepage": "https://github.com/levey/AwesomeMenu",
-"license": "MIT",
-"authors": {
-"levey": "levey.zhu@gmail.com"
-},
-"source": {
-"git": "https://github.com/s1m-0n/AwesomeMenu.git",
-"tag": "1.0.1"
-},
-"platforms": {
-"ios": null
-},
-"source_files": "AwesomeMenu/AwesomeMenu/*.{h,m}",
-"resources": "AwesomeMenu/Images/*.png",
-"requires_arc": false
-}
+Pod::Spec.new do |spec|
+  spec.name         = 'AwesomeMenu'
+  spec.version      = '1.0.2'
+  spec.license      = 'MIT'
+  spec.summary      = 'Path 2.0 menu using CoreAnimation'
+  spec.homepage     = 'https://github.com/levey/AwesomeMenu'
+  spec.author       = 'Levey Zhu'
+  spec.source       = { :git => 'git@github.com:levey/AwesomeMenu.git', :tag => '1.0.2' }
+  spec.source_files = '/AwesomeMenu/AwesomeMenu/*'
+  spec.requires_arc = true
+end
